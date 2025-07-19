@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sahil Kumar | Personal Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f9fafb;
+      color: #111827;
+    }
+    .nav-link {
+      @apply cursor-pointer text-gray-700 hover:text-indigo-600 transition-colors duration-300;
+    }
+    .nav-link.active {
+      @apply text-indigo-700 font-semibold;
+    }
+    /* Animations */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(10px);
+      animation: fadeInUp 0.6s forwards;
+    }
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .project-card:hover {
+      box-shadow: 0 8px 20px rgba(99, 102, 241, 0.25);
+      transform: translateY(-5px);
+      transition: all 0.3s ease-in-out;
+    }
+   
+    nav a {
+      position: relative;
+    }
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -3px;
+      width: 100%;
+      height: 2px;
+      background-color: #6366f1;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.3s ease;
+    }
+    nav a:hover::after, nav a.active::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+  <header class="bg-white shadow-md sticky top-0 z-50">
+    <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+      <h1 class="text-xl font-bold text-indigo-700">Sahil Kumar</h1>
+      <nav>
+        <ul class="flex space-x-8 text-sm font-medium uppercase tracking-wide select-none">
+          <li><a href="#about" class="nav-link active">About</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#resume" class="nav-link">Resume</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="flex-grow container mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-4 gap-10">
+    <!-- Left Sidebar -->
+    <aside id="about" class="space-y-8 md:col-span-1 bg-white p-6 rounded-lg shadow fade-in">
+      <div>
+        <h2 class="text-lg font-semibold border-b-2 border-indigo-600 pb-1 mb-3 uppercase">Contact</h2>
+        <ul class="space-y-2 text-gray-700">
+          <li><span class="font-semibold">Email:</span> <a href="mailto:jaani14365@gmail.com" class="text-indigo-600 hover:underline">jaani14365@gmail.com</a></li>
+          <li><span class="font-semibold">Phone:</span> <a href="tel:+917051387308" class="text-indigo-600 hover:underline">7051387308</a></li>
+          <li><span class="font-semibold">Location:</span> Jammu, India</li>
+          <li><span class="font-semibold">LinkedIn:</span> <a href="https://linkedin.com/in/sahil-kumar-25b41b293" target="_blank" rel="noopener" class="text-indigo-600 hover:underline">sahil-kumar-25b41b293</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="text-lg font-semibold border-b-2 border-indigo-600 pb-1 mb-3 uppercase">Profile</h2>
+        <p class="text-gray-700 leading-relaxed">
+          Passionate CSIT student skilled in web development, problem-solving, and creating innovative digital experiences.
+          Enthusiastic about tech, teamwork, and continuous learning.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-lg font-semibold border-b-2 border-indigo-600 pb-1 mb-3 uppercase">Education</h2>
+        <div class="text-gray-700">
+          <strong>Bachelor of CSIT - 7</strong><br />
+          RAJARAMBAPU INSTITUTE OF TECHNOLOGY<br />
+          August 2023 - June 2026
+        </div>
+      </div>
+
+      <div>
+        <h2 class="text-lg font-semibold border-b-2 border-indigo-600 pb-1 mb-3 uppercase">Language</h2>
+        <div class="text-gray-700">
+          English, Hindi - Intermediate
+        </div>
+      </div>
+    </aside>
+
+    <section class="md:col-span-3 space-y-10">
+    
+      <article id="resume" class="bg-white p-8 rounded-lg shadow fade-in" style="animation-delay: 0.1s;">
+        <h2 class="text-xl font-semibold border-b-2 border-indigo-600 pb-2 mb-6 uppercase">Work Experience</h2>
+        <div class="text-gray-800 space-y-3 leading-relaxed">
+          <h3 class="font-semibold text-indigo-700">Web developer, Trendszkart</h3>
+          <time class="block mb-1 text-gray-600 italic">23-12-2024 - 22-6-2025</time>
+          <p>
+            Gained hands-on experience in web development using HTML, CSS, JavaScript, and Git.<br />
+            Assisted in building and testing responsive UI components under the guidance of senior developers.<br />
+            Worked on real-time mini projects to understand the software development lifecycle.<br />
+            Attended weekly learning sessions on coding best practices and version control.<br />
+            Improved logical thinking and problem-solving by working on small debugging tasks.
+          </p>
+        </div>
+      </article>
+      
+    
+      <article id="projects" class="bg-white p-8 rounded-lg shadow fade-in" style="animation-delay: 0.2s;">
+        <h2 class="text-xl font-semibold border-b-2 border-indigo-600 pb-2 mb-6 uppercase">Projects</h2>
+        <div class="space-y-6">
+          <div class="project-card p-5 border rounded-md hover:shadow-indigo-300 cursor-pointer">
+            <h3 class="text-indigo-700 font-semibold text-lg mb-1 flex items-center">
+              Trendszkart - E-commerce website 
+              <a href="#" target="_blank" rel="noopener" aria-label="Open Trendszkart live website" class="ml-2 inline-block text-indigo-600 hover:text-indigo-900 transition" >
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M14 3h7v7m-7 4l7-7M10 14l9-9M5 19h14a2 2 0 002-2V5a2 2 0 00-2-2H9a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                </svg>
+              </a>
+            </h3>
+            <time class="block mb-2 text-gray-600 italic">23-12-2024 - Present</time>
+            <p class="text-gray-700 leading-relaxed">
+              Designed and developed TrendszKart, a fully responsive e-commerce website for custom T-shirts, hoodies, and more.<br />
+              The project includes product listing, cart functionality, and a cash-free payment method.<br />
+              Used HTML, CSS, JavaScript for frontend design, and localStorage to manage user selections.<br />
+              Implemented smooth navigation across multiple category pages like Scoops, Mastani, Milkshakes (for Ice Cream version if included), ensuring a clean and user-friendly UI.
+            </p>
+          </div>
+        </div>
+      </article>
+      
+      <article id="skills" class="bg-white p-8 rounded-lg shadow fade-in" style="animation-delay: 0.3s;">
+        <h2 class="text-xl font-semibold border-b-2 border-indigo-600 pb-2 mb-6 uppercase">Skills</h2>
+        <p class="text-gray-700">
+          Web developer, frontend developer - proficient in HTML, CSS, JavaScript, responsive design, and Git version control.
+        </p>
+      </article>
+      <article id="contact" class="bg-white p-8 rounded-lg shadow fade-in" style="animation-delay: 0.4s;">
+        <h2 class="text-xl font-semibold border-b-2 border-indigo-600 pb-2 mb-6 uppercase">Contact Me</h2>
+        <form id="contactForm" class="max-w-lg space-y-6" action="mailto:jaani14365@gmail.com" method="POST" enctype="text/plain">
+          <div>
+            <label for="name" class="block font-semibold mb-1">Name</label>
+            <input type="text" id="name" name="name" required class="w-full rounded border border-gray-300 p-3 focus:outline-indigo-500 focus:ring-1 focus:ring-indigo-600" />
+          </div>
+          <div>
+            <label for="email" class="block font-semibold mb-1">Email</label>
+            <input type="email" id="email" name="email" required class="w-full rounded border border-gray-300 p-3 focus:outline-indigo-500 focus:ring-1 focus:ring-indigo-600" />
+          </div>
+          <div>
+            <label for="message" class="block font-semibold mb-1">Message</label>
+            <textarea id="message" name="message" rows="5" required class="w-full rounded border border-gray-300 p-3 resize-y focus:outline-indigo-500 focus:ring-1 focus:ring-indigo-600"></textarea>
+          </div>
+          <button type="submit" class="bg-indigo-600 text-white px-6 py-3 rounded hover:bg-indigo-700 transition-all duration-300 font-semibold w-full md:w-auto">Send Message</button>
+        </form>
+      </article>
+    </section>
+  </main>
+
+  <footer class="bg-indigo-700 text-white py-4 text-center text-sm select-none">
+    &copy; 2024 Sahil Kumar | All rights reserved
+  </footer>
+
+  <script>
+    const sections = document.querySelectorAll('main section, main article, aside#about');
+    const navLinks = document.querySelectorAll('nav a.nav-link');
+
+    function changeActiveLinkOnScroll() {
+      let scrollY = window.pageYOffset;
+      sections.forEach(section => {
+        const sectionHeight = section.offsetHeight;
+        const sectionTop = section.offsetTop - 80;
+        const sectionId = section.getAttribute('id');
+        if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+          navLinks.forEach(link => {
+            link.classList.remove('active');
+            if(link.getAttribute('href') === '#' + sectionId) {
+              link.classList.add('active');
+            }
+          });
+        }
+      });
+    }
+
+    window.addEventListener('scroll', changeActiveLinkOnScroll);
+
+  </script>
+</body>
+</html>
+
